@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Year of Wellbeing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="globe"></div>
+
+  <!-- Title + legend -->
+  <header id="header">
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+    <ul id="legend"></ul>
+    <button id="aboutBtn" class="link-btn">About this project</button>
+  </header>
+
+  <!-- Stop detail panel -->
+  <aside id="panel" class="hidden" aria-live="polite">
+    <button id="closePanel" class="icon-btn" aria-label="Close">×</button>
+    <p id="pStep" class="eyebrow"></p>
+    <h2 id="pName"></h2>
+    <p id="pDates" class="dates"></p>
+    <span id="pTheme" class="badge"></span>
+    <h3>What I'd do</h3>
+    <p id="pActivity" class="body"></p>
+    <h3>Why it's here</h3>
+    <p id="pWhy" class="body"></p>
+    <div id="pPhotos"></div>
+  </aside>
+
+  <!-- Playback controls -->
+  <footer id="controls">
+    <button id="prevBtn" class="icon-btn" aria-label="Previous stop">‹</button>
+    <button id="playBtn" class="play-btn" aria-label="Play">▶</button>
+    <button id="nextBtn" class="icon-btn" aria-label="Next stop">›</button>
+    <input id="slider" type="range" min="0" value="0" step="1" aria-label="Trip timeline" />
+    <span id="stepLabel"></span>
+  </footer>
+
+  <!-- Intro / closing / about overlay -->
+  <div id="overlay">
+    <div class="card">
+      <p id="oEyebrow" class="eyebrow"></p>
+      <h2 id="oTitle"></h2>
+      <div id="oBody" class="body"></div>
+      <div id="oRefs"></div>
+      <div class="actions">
+        <button id="beginBtn" class="primary">Begin the journey</button>
+        <button id="exploreBtn" class="secondary">Explore freely</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="trip.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
