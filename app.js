@@ -4,23 +4,46 @@
   const stops = T.stops.map((s, i) => ({ ...s, i }));
   const n = stops.length;
   const $ = (id) => document.getElementById(id);
-  const themeOf = (s) => T.themes[s.theme] || { label: s.theme || "", color: "#ffffff" };
+  const POINT_COLOR = "#ffd27a";
 
   let current = -1;
   let playing = false;
   let timer = null;
   const STEP_MS = 5000; // time spent on each stop while playing
 
-  /* ---------- Header + legend ---------- */
+  /* ---------- Header ---------- */
   document.title = T.title.replace(/^\[|\]$/g, "") || "A Year of Wellbeing";
   $("title").textContent = T.title;
   $("subtitle").textContent = T.subtitle;
-  Object.values(T.themes).forEach((t) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<i style="background:${t.color}"></i>`;
-    li.append(t.label);
-    $("legend").append(li);
-  });
+
+  /* ---------- Miles ---------- */
+  // Each stop's `miles` = distance from the previous stop. If missing, use
+  // the straight-line (great-circle) distance instead.
+  function haversineMi(a, b) {
+    const R = 3958.8, rad = Math.PI / 180;
+    const dLat = (b.lat - a.lat) * rad, dLng = (b.lng - a.lng) * rad;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  const legMiles = stops.map((s, i) =>
+    i === 0 ? 0 : typeof s.miles === "number" ? s.miles : Math.round(haversineMi(stops[i - 1], s)));
+  const cumMiles = legMiles.map((_, i) => legMiles.slice(0, i + 1).reduce((x, y) => x + y, 0));
+  const totalMiles = cumMiles[n - 1] || 0;
+  const fmt = (m) => Math.round(m).toLocaleString();
+  $("milesTotal").textContent = `of ~${fmt(totalMiles)}`;
+
+  let shownMiles = 0, milesAnim = null;
+  function animateMiles(target) {
+    cancelAnimationFrame(milesAnim);
+    const from = shownMiles, t0 = performance.now(), dur = 1600;
+    const step = (now) => {
+      const p = Math.min((now - t0) / dur, 1);
+      shownMiles = from + (target - from) * (1 - Math.pow(1 - p, 3));
+      $("milesNow").textContent = fmt(shownMiles);
+      if (p < 1) milesAnim = requestAnimationFrame(step);
+    };
+    milesAnim = requestAnimationFrame(step);
+  }
 
   /* ---------- Globe ---------- */
   const el = $("globe");
@@ -38,7 +61,7 @@
     .backgroundImageUrl("https://unpkg.com/three-globe/example/img/night-sky.png")
     .width(window.innerWidth).height(window.innerHeight)
     .pointLat("lat").pointLng("lng")
-    .pointColor((d) => themeOf(d).color)
+    .pointColor(() => POINT_COLOR)
     .pointAltitude((d) => (d.i === current ? 0.06 : 0.015))
     .pointRadius((d) => (d.i === current ? 0.55 : 0.38))
     .pointsMerge(false)
@@ -83,17 +106,15 @@
     showPanel(s);
     slider.value = i;
     $("stepLabel").textContent = `${i + 1} / ${n}`;
+    animateMiles(cumMiles[i]);
   }
 
   function showPanel(s) {
-    const t = themeOf(s);
     $("pStep").textContent = `Stop ${s.i + 1} of ${n}`;
     $("pName").textContent = s.name;
     $("pDates").textContent = s.dates || "";
-    const badge = $("pTheme");
-    badge.textContent = t.label;
-    badge.style.background = t.color;
-    badge.classList.toggle("hidden", !t.label);
+    $("pLeg").textContent = s.i === 0 ? "Starting point"
+      : `${fmt(legMiles[s.i])} mi from ${stops[s.i - 1].name} · ${fmt(cumMiles[s.i])} mi so far`;
     $("pActivity").textContent = s.activity || "";
     $("pWhy").textContent = s.why || "";
     const photos = $("pPhotos");
