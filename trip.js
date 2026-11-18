@@ -16,15 +16,15 @@
    ===================================================================== */
 
 window.TRIP = {
-  title: "[Your project title]",
-  subtitle: "[A one-line subtitle, e.g. what the year is about]",
+  title: "Wellbeing Creative Project",
+  subtitle: "This is a route of my dream trip that would complete my bucket list",
   author: "Ian Holzman · NURS 180",
 
   // Shown on the opening screen (your project description can go here)
   intro: "[Your intro: what this project is and how to explore it.]",
 
   // Shown when the journey finishes, and under 'About'
-  closing: "[Your closing reflection: How does this project capture what wellbeing looks like to you?]",
+  closing: "I feel most well when I am stress-free: not worrying about what might happen in the future, but enjoying the day I am having. I know I am well when I feel outwardly happy and grateful; I’ll often say “what a nice day,” no matter what I am doing. I also feel well when I am doing something rewarding, whether that is spending time with loved ones, going for a run in nature, or experiencing something new.\n\nFor me, traveling is the highest form of that, and the most rewarding thing I have ever experienced. It brings all of those things together: it is often shared with loved ones, it deliberately involves being outside, whether hiking or going for a long walk or run to explore a new place, and it means experiencing somewhere new. Even the prospect of an upcoming trip makes me feel more well. When I’m not feeling my best, thinking about a trip in the future lifts my mood and makes me a lot more motivated.",
 
   // APA 7 references, only if you cite anything. Leave [] if not.
   references: [
