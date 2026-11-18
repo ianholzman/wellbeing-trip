@@ -40,59 +40,107 @@ window.TRIP = {
   },
 
   stops: [
+    // --- Road trip: Vancouver to San Diego (June 2027) ---
     {
-      name: "Vancouver, Canada",            // SAMPLE — replace
+      name: "Vancouver, BC",
       lat: 49.2827, lng: -123.1207,
-      dates: "January",
+      dates: "Tue, June 1, 2027 · Day 1, start of the road trip",
       theme: "connection",
-      activity: "[What you'd do here]",
-      why: "[Your words: why this stop is on the trip and what it says about your wellbeing.]",
-      photos: []
-    },
-    {
-      name: "Sample stop — Japan",          // SAMPLE — replace
-      lat: 42.8048, lng: 140.6874,
-      dates: "February",
-      theme: "movement",
-      activity: "[What you'd do here]",
+      activity: "Wrap up UBC graduation and set off on the road trip.",
       why: "[Your words]",
       photos: []
     },
     {
-      name: "Sample stop — New Zealand",    // SAMPLE — replace
-      lat: -45.0312, lng: 168.6626,
-      dates: "March – April",
-      theme: "curiosity",
-      activity: "[What you'd do here]",
-      why: "[Your words]",
-      photos: []
-    },
-    {
-      name: "Sample stop — Portugal",       // SAMPLE — replace
-      lat: 38.7223, lng: -9.1393,
-      dates: "May",
-      theme: "rest",
-      activity: "[What you'd do here]",
-      why: "[Your words]",
-      photos: []
-    },
-    {
-      name: "Sample stop — USA",            // SAMPLE — replace
-      lat: 39.7392, lng: -104.9903,
-      dates: "June",
+      name: "Seattle, WA",
+      lat: 47.6062, lng: -122.3321,
+      dates: "Wed, June 2 · 1 night",
       theme: "community",
       activity: "[What you'd do here]",
       why: "[Your words]",
       photos: []
     },
     {
-      name: "Home — Vancouver, Canada",     // SAMPLE — replace
-      lat: 49.2827, lng: -123.1207,
-      dates: "December",
-      theme: "connection",
+      name: "Sequim, WA",
+      lat: 48.0795, lng: -123.1018,
+      dates: "Thu, June 3 · 1 night",
+      theme: "rest",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "La Push, WA",
+      lat: 47.9076, lng: -124.6363,
+      dates: "Fri, June 4 · 1 night",
+      theme: "rest",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Seaside, OR",
+      lat: 45.9932, lng: -123.9226,
+      dates: "June 5 – 8 · 3 nights",
+      theme: "movement",
+      activity: "Head down the coast and stop for three days to surf.",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Manzanita, OR",
+      lat: 45.7184, lng: -123.9351,
+      dates: "June 8 – 10 · 2 nights",
+      theme: "rest",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Mavericks, Half Moon Bay, CA",
+      lat: 37.495, lng: -122.499,
+      dates: "June 10 – 11 · 1 night",
+      theme: "curiosity",
+      activity: "Stop for a night just to watch the waves at Mavericks.",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Sequoia National Park, CA",
+      lat: 36.4864, lng: -118.5658,
+      dates: "June 11 – 12 · 1 night",
+      theme: "curiosity",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Yosemite National Park, CA",
+      lat: 37.7456, lng: -119.5936,
+      dates: "June 12 – 14 · 2 nights",
+      theme: "movement",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "Joshua Tree National Park, CA",
+      lat: 33.8734, lng: -115.901,
+      dates: "June 14 – 16 · 2 nights",
+      theme: "rest",
+      activity: "[What you'd do here]",
+      why: "[Your words]",
+      photos: []
+    },
+    {
+      name: "San Diego, CA",
+      lat: 32.7157, lng: -117.1611,
+      dates: "June 16 – 17 · 1 night",
+      theme: "community",
       activity: "[What you'd do here]",
       why: "[Your words]",
       photos: []
     }
+
+    // --- Add the rest of the year below ---
   ]
 };
