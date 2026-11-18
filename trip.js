@@ -21,10 +21,10 @@ window.TRIP = {
   author: "Ian Holzman · NURS 180",
 
   // Shown on the opening screen (your project description can go here)
-  intro: "[Your intro: what this project is and how to explore it.]",
+  intro: "Interactive Bucket List Trip",
 
   // Shown when the journey finishes, and under 'About'
-  closing: "I feel most well when I am stress-free: not worrying about what might happen in the future, but enjoying the day I am having. I know I am well when I feel outwardly happy and grateful; I’ll often say “what a nice day,” no matter what I am doing. I also feel well when I am doing something rewarding, whether that is spending time with loved ones, going for a run in nature, or experiencing something new.\n\nFor me, traveling is the highest form of that, and the most rewarding thing I have ever experienced. It brings all of those things together: it is often shared with loved ones, it deliberately involves being outside, whether hiking or going for a long walk or run to explore a new place, and it means experiencing somewhere new. Even the prospect of an upcoming trip makes me feel more well. When I’m not feeling my best, thinking about a trip in the future lifts my mood and makes me a lot more motivated.",
+  closing: "I feel most well when I am stress-free. Not worrying about what might happen in the future, but enjoying the day I am having. I know I am well when I feel outwardly happy and grateful. I’ll often say “what a nice day,” for no real reason, no matter what I am doing. I also feel well when I am doing something rewarding, whether that is spending time with loved ones, being in nature, or experiencing something new.\n\nFor me, traveling is the highest form of that, and the most rewarding thing I have experienced. It brings those things together: it is often shared with loved ones, it generally deliberately involves being outside, whether hiking or going for a long walk or run to explore a new place, and it means experiencing somewhere new. Even the prospect of an upcoming trip makes me feel more well. When I’m not feeling my best, thinking about a trip I have planned in the future lifts my mood and makes me a lot more motivated.",
 
   // APA 7 references, only if you cite anything. Leave [] if not.
   references: [
@@ -694,7 +694,7 @@ window.TRIP = {
       lat: -45.0312, lng: 168.6626,
       dates: "Jan 11 – 15 · 4 nights",
       activity: "Lakeside walks, the gondola up Bob's Peak, and a scenic drive out to Glenorchy.",
-      why: "[Your words]",
+      why: "To keep myself focused for the end of the trip, I have more strict activities to see as much of Australia and New Zealand before I go home.",
       photos: []
     },
     {
